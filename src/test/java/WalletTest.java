@@ -14,31 +14,31 @@ class WalletTest {
     Wallet wallet2 = new Wallet("DragonBall", empty, 0.0);
 
     @Test
-    void getOwner() {
+    void testGetOwner() {
         Assertions.assertEquals("Android", wallet1.getOwner());
     }
 
     @Test
-    void setOwner() {
+    void testSetOwner() {
         wallet2.setOwner("Naruto");
         Assertions.assertEquals("Naruto", wallet2.getOwner());
     }
 
     @Test
-    void withdraw() {
+    void testWithdraw() {
         wallet1.deposit(10000.0);
         wallet1.withdraw(5000.0);
         Assertions.assertEquals(5000.0, wallet1.getCash());
     }
 
     @Test
-    void deposit() {
+    void testDeposit() {
         wallet1.deposit(5000.0);
         Assertions.assertEquals(5000.0, wallet1.getCash());
     }
 
     @Test
-    void addCards() {
+    void testAddCards() {
         wallet1.addCards("BRI", 101);
         wallet1.addCards("BNI", 202);
         List<Card> cards = new ArrayList<>();
@@ -50,7 +50,7 @@ class WalletTest {
     }
 
     @Test
-    void removeCard() {
+    void testRemoveCard() {
         wallet1.addCards("BRI", 101);
         wallet1.addCards("BNI", 202);
         wallet1.removeCard(202);
